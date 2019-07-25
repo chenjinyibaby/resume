@@ -1,29 +1,30 @@
 body{
     background: black;
     color:white;
-    margin:0px;
+    margin:0px;  /*边缘为0像素*/
 }
 a{
     color: inherit;
-    text-decoration: none;
+    text-decoration: none; /*无下划线、文字装饰为无*/
 }
 .clearfix:after{
     content:'';
-display: block;
-clear: both;
-}
+    display: block;
+    clear: both;
+}/*.clearfix:after指的是清除浮动，其中三句背诵。内容‘’，显示：块，
+清除，都清除*/
 .topNavBar {
-padding-top: 20px;
+padding-top: 20px;/*上内边距*/
 padding-left: 16px;
-padding-right: 16px
-
+padding-right: 16px;
+/*overflow: hidden;清除浮动*/
 }
 .topNavBar>nav {
     padding: 9px 
 }
 .topNavBar>nav>ul{
     list-style: none; 
-    margin: 0; 
+    margin: 0; /*无边缘*/
     padding: 0;  
 }
 .topNavBar>nav>ul>li{
@@ -32,12 +33,14 @@ padding-right: 16px
     margin-right: 17px;
 }
 .topNavBar>nav>ul>li>a{
+    padding-bottom: 3px;
     font-size: 12px;
     color: #bbb;
-    font-weight: bold;
-    border-top: 3px solid transparent;
+    font-weight: bold;  /*字体加粗，bold粗*/
+    border-top: 3px solid transparent;  /*border：边框，
+    soild：实线、transparent透明*/
     border-bottom: 3px solid transparent;
-    display: block
+    display: block;  /*给这个li就会包裹住a*/
 }
 .topNavBar>nav>ul>li>a:hover{
     border-bottom: 3px solid #E06567;
