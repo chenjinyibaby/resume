@@ -1,11 +1,19 @@
 body{
-    background: black;
-    color:white;
-    margin:0px;  /*边缘为0像素*/
+    background-color:#efefff;
+    margin:0px; 
 }
 a{
-    color: inherit;
+    color: inherit;/*继承父元素(body)以及以上元素*/
     text-decoration: none; /*无下划线、文字装饰为无*/
+}
+*{
+    margin:0px;
+    padding:0px;/*所有元素都不要边距*/
+}
+hr{
+    height: 0;
+    border:none;
+    border-top:1px solid  #bbb;
 }
 .clearfix:after{
     content:'';
@@ -13,26 +21,40 @@ a{
     clear: both;
 }/*.clearfix:after指的是清除浮动，其中三句背诵。内容‘’，显示：块，
 清除，都清除*/
+
 .topNavBar {
-padding-top: 20px;/*上内边距*/
-padding-left: 16px;
-padding-right: 16px;
-/*overflow: hidden;清除浮动*/
+    padding-top: 20px;/*上内边距*/
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    /*padding可写为一句话：padding:20px 16px 20px 16px (顺序上右下左)*/
+    /*overflow: hidden;清除浮动*/
+    position: fixed;
+    /*脱离文档流，即让背景图和topnavbar沦为一体,脱离和不脱离只影响一个问题就是那个div的高度*/
+    top:0;
+    left:0;
+    width:100%;/*会导致bug，宽度百分之100*/
 }
-.topNavBar>nav {
-    padding: 9px 
+.topNavBar-inner{
+    padding:0 16px;
 }
-.topNavBar>nav>ul{
+#a {
+    padding: 0 30px;
+}
+.topNavBar nav {
+    padding: 9px;
+}
+.topNavBar nav>ul{
     list-style: none; 
     margin: 0; /*无边缘*/
     padding: 0;  
 }
-.topNavBar>nav>ul>li{
+.topNavBar nav>ul>li{
     float: left; 
     margin-left: 17px;
     margin-right: 17px;
 }
-.topNavBar>nav>ul>li>a{
+.topNavBar nav>ul>li>a{
     padding-bottom: 3px;
     font-size: 12px;
     color: #bbb;
@@ -42,19 +64,113 @@ padding-right: 16px;
     border-bottom: 3px solid transparent;
     display: block;  /*给这个li就会包裹住a*/
 }
-.topNavBar>nav>ul>li>a:hover{
+.topNavBar nav>ul>li>a:hover{
     border-bottom: 3px solid #E06567;
 }
 
 .topNavBar .logo{
-    font-size: 24px;
-    font-family: "Arial Black" 
+    font-size: 24px; /*继承*/
+    font-family: "Arial Black" /*继承*/
 }
 .topNavBar .logo .rs{
    margin-right: 4px;
-   color:red
+   color:red;
 }
 .topNavBar .logo .card{
-    color:gray
+    color:gray; 
+}
+.banner{
+    height: 515px;/*不到情非得已不要用height，会有bug*/
+   background-image: url(./img/rs-cover.jpg);
+   background-position: center center;/*背景位置（position）：图片水平居中上下居中*/
+   background-size: cover;/*背景图片尺寸：盖住所有面积，自适应屏幕大小，按比例缩放*/
+}
+.banner .mask{
+    height: 515px;
+    background-color: rgba(0,0,0,0.8)
+
+}
+.userCard{
+    border:1px  solid red;
+    max-width: 940px;/*最大宽度*/
+    margin-left: auto;
+    margin-right: auto;/*如果是一个div且有一个宽度，居中可以写margin*/
+    background-color: #ffff; 
+}
+.userCard .welcome{
+    display: inline-block;/*span不接受设置宽高，需要display:inline-block*/
+    background-color: #E06567;
+    color:white;
+    padding:4px 16px;/*上下4像素，左右16像素*/
+    line-height: 22px;
+    position: relative;/*父元素*/
+    margin-bottom:10px;
+    /*width:70px;
+    height:29px;
+    line-height: 29px;垂直居中
+    text-align: center;水平居中，第一种方式不推荐使用，推荐使用padding*/
+}
+.userCard .welcome .triangle{
+    display: block;/*html中样式为span，需要打破原有样式*/
+    border: 15px solid transparent; /*transparent透明*/
+    width: 0px;
+    border-left-color: #E06567;
+    border-top-width: 0px;
+    position: absolute;/*子元素相对于父元素定位*/
+    left: 5px;/*使三角形在左下角*/
+    top: 100%;
+}
+.userCard .picture{
+    float:left;
+}
+.userCard .text{
+    float:left;
+    margin-left: 65px;
+    width:400px;
+}
+.userCard .text h1{
+    margin-top: 18px;
+
+}
+.userCard .text hr{
+    margin: 20px 0;
+}
+.userCard .pictureAndtxet{
+   padding:50px;
+}
+.userCard dl dt,
+.userCard dl dd{
+    float:left;
+    width:50%;
+    padding:5px 0;/*上下各5像素，左右0像素*/
+}
+.userCard dl dt{
+    font-weight: bold;/*字体加粗*/
+}
+.userCard dl dd{
+    color: #bbb}
+
+.userCard >footer.media{
+  background: #E06567;
+  text-align:center;
+
+}
+.userCard >footer.media >a{
+    /*border: 1px solid black;边框*/
+    display: inline-block;
+    width: 40px;
+    line-height: 30px;
+    padding: 5px 0;
+    border-radius: 50%;/*圆*/
+    margin: 13px;
+}
+.userCard >footer.media >a:hover{
+    background: #cf5d5f
+}
+.userCard svg{
+    width: 30px;
+    height: 30px;
+    fill:white;/*js中的颜色*/
+    vertical-align: top; /*上下距离一致*/
 
 }
