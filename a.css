@@ -15,6 +15,9 @@ hr{
     border:none;
     border-top:1px solid  #bbb;
 }
+ul,ol{
+    list-style: none;/*列表样式无*/
+}
 .clearfix:after{
     content:'';
     display: block;
@@ -91,11 +94,11 @@ hr{
 
 }
 .userCard{
-    border:1px  solid red;
     max-width: 940px;/*最大宽度*/
-    margin-left: auto;
+    margin-left: auto;/*浏览器设置的左外边距,即根据浏览器变化*/
     margin-right: auto;/*如果是一个div且有一个宽度，居中可以写margin*/
     background-color: #ffff; 
+    box-shadow:0px 1px 5px 0px rgba(0,0,0,0.5);/*阴影*/
 }
 .userCard .welcome{
     display: inline-block;/*span不接受设置宽高，需要display:inline-block*/
@@ -172,5 +175,54 @@ hr{
     height: 30px;
     fill:white;/*js中的颜色*/
     vertical-align: top; /*上下距离一致*/
+}
+body main{
+    margin-top:-420px; /*距离上边距距离，整个内元素向上推*/
+}
+body > main .downloadresume-wrapper{
+    text-align: center;
+}
+body > main .downloadresume{
+    font-size:14px;
+    line-height: 16px;
+    padding: 21px 55px;
+    display: inline-block;/*内联元素需要打破一下*/
+    border: 1px solid #cdcdec;
+    background:#efefff;
+    border-radius: 2px;/*圆角*/
+    color:#3d4451;
+    font-weight: bold;/*字体加粗*/
+    margin:32px 0;
+   
 
+}
+body > main .downloadresume:hover{
+    transition:box-shadow 0.3s;/*鼠标悬浮出现阴影时有个1s的过渡*/
+    box-shadow: -1px 6px 20px -4px rgba(15,14,15,1);/*鼠标悬浮有个阴影搜索css shadow generator*/
+}
+.selfIntruduction{
+    max-width: 940px;/*最大宽度*/
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: kai;/*字体*/
+}
+section.skills{
+    max-width: 940px;/*最大宽度*/
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+   
+}
+section.skills>h2{
+    text-align: center;
+    color:black;
+    font-size:36px;
+    line-height: 1.2;
+    font-weight: 600;
+
+}
+section.skills>ol{
+    background:white;
+    box-shadow:0px 1px 5px 0px rgba(0,0,0,0.5);
 }

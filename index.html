@@ -40,7 +40,7 @@
 			<div class="mask"><!--遮罩-->
 			</div>
 		</div>
-		<main>
+		<main><!--main style="margin-top:-320px;"距离外面的距离，整个内元素向上推-->
 			<div class="userCard">
 			<div class="pictureAndtxet clearfix">
 			<div class="picture">
@@ -80,10 +80,14 @@
 			</footer>
 			
 			</div>
-			<a class="botton" href="#">下载pdf简历</a>
-			<p>欢迎查看我的简历，陈瑾仪，前端工程师,xxxx<br>我的第一个简历</p>
+			<p class="downloadresume-wrapper">
+			<a class="downloadresume" href="./resume.pdf" target="_blank" download>下载pdf简历 </a>
+			</p>
+			<!--download写上就会一定下载，目标地址是_blank是指在新的窗口打开链接,_self指的是当前
+				窗口打开链接；也可以设置内联框架的值，target这个值值得是在内联样式中打开链接-->
+			<p class="selfIntruduction">欢迎查看我的简历，陈瑾仪，前端工程师,xxxx<br>我的第一个简历</p>
 		</main>
-		<section>
+		<section class="skills">
 			<h2>技能</h2>
 			<ol>
 				<li>HTML 5 &amp; CSS 3</li>
