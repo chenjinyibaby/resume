@@ -18,6 +18,9 @@ hr{
 ul,ol{
     list-style: none;/*列表样式无*/
 }
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+}
 .clearfix:after{
     content:'';
     display: block;
@@ -206,23 +209,114 @@ body > main .downloadresume:hover{
     margin-left: auto;
     margin-right: auto;
     font-family: kai;/*字体*/
+    line-height: 1.8;
+    font-size: 18px;
+
 }
-section.skills{
+section.skills,
+section.portfolio {
     max-width: 940px;/*最大宽度*/
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
-   
+    margin-top: 60px; 
 }
-section.skills>h2{
-    text-align: center;
+section.skills > h2,
+section.portfolio > h2{
+    text-align: center;/*居中*/
     color:black;
-    font-size:36px;
+    font-size:26px;
     line-height: 1.2;
     font-weight: 600;
-
 }
-section.skills>ol{
+section.skills h3/*后代元素选择器*/{
+    font-size: 14px;
+    line-height: 1.1;
+    padding-right: 40px;
+}
+section.skills > ol{
     background:white;
     box-shadow:0px 1px 5px 0px rgba(0,0,0,0.5);
+    padding: 42px 50px 10px;/*左右42，上下50，10*/
+    margin-top: 30px;
+}
+section.skills > ol >li{
+    float: left;
+    width: 48%;
+    box-sizing:border-box;/*允许以特定的方式匹配某个区域的特定元素,
+    即下面的padding的长度包含在width的50%中，即整体宽度还是50%*/
+    padding-right:20px;
+}
+section.skills > ol >li:nth-child(even)/*eth-child指的用来选中n个儿子,他是一个伪类，并不是一个
+元素或者是选择器，even指的是偶数*/{
+    float: right;
+}
+
+.progressBar/*类选择器，用.元素隔开*/{
+    height: 5px;
+    background: #fabafa;
+    border-radius: 2px;
+    margin: 4px 0 40px;
+}
+.progress{
+    height: 100%;/*上面的progressbar已经设置了3px，这里div可以不用设置*/
+    width: 60%;
+    background:red;
+    border-radius: 2px;
+}
+section.portfolio{
+    text-align: center;
+    margin-bottom: 100px;
+}
+section.portfolio nav ol{
+    margin:0 auto;/*上下页面空白为 0px,左右页面空白自适应并且相等 可以达到横向居中的效果*/
+    display: inline-block;
+    vertical-align: top;
+}
+section.portfolio nav ol li{
+    float: left;
+    margin-left: 40px;/*左边距*/
+    cursor: pointer;/*光标：指针*/
+    
+}
+section.portfolio nav ol li:first-child{
+    margin-left: 0px;
+}
+section.portfolio nav{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 32px;
+
+}
+section.portfolio nav .bar{
+    height:5px;
+    background:white;
+    margin-top: 10px;
+    margin-bottom: 28px;
+    border-radius: 5px;
+}
+section.portfolio nav .bar-inner{
+    height:100%;
+    background:red;
+    width:10%;
+    border-radius: 5px;
+    transition: all 0.5s;/*动画，这个是过渡，所有过渡：0.3s*/
+}
+section.portfolio nav .bar.state-1 .bar-inner{
+    margin-left: 0px;/*bar.state-1,一个元素同时符合bar和状态1的条件*/
+    width:50px;
+}
+section.portfolio nav .bar.state-2 .bar-inner{
+    margin-left: 60px;/*bar.state-1,一个元素同时符合bar和状态1的条件*/
+    width:60px;
+}
+section.portfolio nav .bar.state-3 .bar-inner{
+    margin-left: 120px;/*bar.state-1,一个元素同时符合bar和状态1的条件*/
+    width:70px;
+}
+section.portfolio .works{
+    position: relative;
+}
+section.portfolio .works > .big,
+section.portfolio .works > .small{
+    position: absolute;
 }

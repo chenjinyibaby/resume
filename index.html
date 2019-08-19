@@ -89,32 +89,94 @@
 		</main>
 		<section class="skills">
 			<h2>技能</h2>
-			<ol>
-				<li>HTML 5 &amp; CSS 3</li>
-				<li>Javascript</li>
-				<li>JQuery</li>
-				<li>VUE</li>
-				<li>React</li>
-				<li>HTTP</li>
+			<ol class="clearfix"><!--与后面的css中的float是一对，浮动-->
+				<li>
+					<h3>
+						HTML 5 &amp; CSS 3
+					</h3>
+					<div class="progressBar"><!--进度条-->
+					<div class="progress" style="width: 90%;background:red;">
+					</div><!--进度条是由两个长条套嵌而成,在前面给一个style和后面的相呼应，
+						并且前面的style等级大于后面-->
+					</div>	
+				</li>
+				<li>
+					<h3>
+						Javascript
+					</h3>
+					<div class="progressBar"><!--进度条-->
+					 	<div class="progress"style="width: 80%;background:red;"></div><!--进度条是由两个长条套嵌而成-->
+					</div>	
+				</li>
+				<li>
+					<h3>
+						JQuery
+					</h3>
+					<div class="progressBar"><!--进度条-->
+						<div class="progress"></div><!--进度条是由两个长条套嵌而成-->
+					</div>	
+				</li>
+				<li>
+					<h3>
+						Vue.js
+					</h3>
+					<div class="progressBar"><!--进度条-->
+						<div class="progress"></div><!--进度条是由两个长条套嵌而成-->
+						</div>	
+					</li>		
+				<li>
+					<h3>
+						React
+					</h3>
+					<div class="progressBar"><!--进度条-->
+						<div class="progress"></div><!--进度条是由两个长条套嵌而成-->
+					</div>	
+				</li>		
+				<li>
+					<h3>
+						Node.js
+					</h3>
+					<div class="progressBar"><!--进度条-->
+						<div class="progress"></div><!--进度条是由两个长条套嵌而成-->
+					</div>	
+				</li>				
 			</ol>
 		</section>
-		<section>
+		<section class="portfolio"><!--作品集英文portfolio，和上面的技能是一样的状态-->
 			<h2>作品集</h2>
 			<nav>
-				<ol> 
-					<li>所有</li>
-					<li>框架</li>
-					<li>源生js</li>
+				<ol class="clearfix"> 
+					<li id="portfolio1">所有</li>
+					<li id="portfolio2">框架</li>
+					<li id="portfolio3">源生js</li>
 				</ol>
-			</nav>
-			<div class="jobs"></div>
-			<div class=“big”></div>
-			<div class="small"></div>
-			<div class="small"></div>
+				<div id="portfolioBar" class="bar state-1">
+				<div class="bar-inner"></div>
+				</div>
+			</nav><!--script是JS，script出现在元素的下方就行，当点击portfolio1时，出现1时候的状态条-->
+			<script>
+					portfolio1 .onclick= function(){
+						portfolioBar.className = "bar state-1"
+					}
+					portfolio2 .onclick= function(){
+						portfolioBar.className="bar state-2"
+					}
+					portfolio3 .onclick= function(){
+						portfolioBar.className="bar state-3"
+					}
+				</script>
+			
+			<div class="works" style="height:597px;">
+				<div class="big" style="top:0; left:0;">
+					<img src="./img/1.jpg" alt="作品1">
+				</div>
+				<div class="small" style="top:0; left:645px;">
+					<img src="./img/2.jpg" alt="作品2">
+				</div>
+				<div class="small" style="top:312px; left:645px;">
+					<img src="./img/3.jpg" alt="作品3">
+				</div>
+			</div>
 		</section>
 	</body>
 </html>
-
-
-
-
